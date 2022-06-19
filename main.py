@@ -34,24 +34,17 @@ def max_sub_array_of_size_k(k, arr):
 
     for element in range(arr_size - 1):
         print("element:", element)
+        curr_sum += arr[element]
 
-        for i in range(k):
-            curr_sum +=
+        if element >= k - 1:
+            print("entered curr sum:", curr_sum)
+            largest_sum = max(largest_sum, curr_sum)
+
+            curr_sum -= arr[element - (k-1)]    # Suggested to create variable "window_start" to keep track of the index element to be popped off
+            #curr_sum += arr[element + 1]
+
         print("curr sum:", curr_sum)
-
-        # for element in range(subarray_idx, subarray_idx + k):
-        #     # print("element:", element)
-        #
-        #     curr_sum += arr[element]
-        #     print("curr sum:", curr_sum)
-        #
-        # if curr_sum > largest_sum:
-        #     largest_sum = curr_sum
-        #
-        # print("largest_sum sum:", largest_sum)
-        #
-        # curr_sum = 0
-
+        print("large sum:", largest_sum)
 
     return 0
 
